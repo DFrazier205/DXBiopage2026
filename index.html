@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Darrin 'X' Frazier — 40+ years shaping Washington DC's Go-Go culture. Musician, producer, cultural architect, and digital innovator.">
+    <meta name="author" content="Darrin X Frazier">
+    <meta name="theme-color" content="#060606">
+    <meta property="og:title" content="Darrin 'X' Frazier — Cultural Architect">
+    <meta property="og:description" content="40+ years shaping Washington DC's Go-Go culture. Musician, producer, cultural architect, and digital innovator.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="DX_HS_pic.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Darrin "X" Frazier — Cultural Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#060606;--bg2:#0e0e0e;--surface:#1a1a1a;
+            --border:rgba(255,255,255,0.09);--border-h:rgba(255,255,255,0.18);
+            --gold:#c8a44e;--gold-dim:rgba(200,164,78,0.15);--gold-glow:rgba(200,164,78,0.3);
+            --white:#f5f0e8;--dim:#c2b9ad;--muted:#958e85;
+            --serif:'Cormorant Garamond','Georgia',serif;
+            --sans:'Josefin Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+            --mono:'JetBrains Mono','Menlo',monospace;
+            --ease:cubic-bezier(.16,1,.3,1);
+        }
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:var(--sans);background:var(--bg);color:var(--white);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-env:safe-area-inset-top safe-area-inset-right safe-area-inset-bottom safe-area-inset-left}
+        img{display:block;max-width:100%;height:auto}
+        .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;will-change:auto;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+
+        /* NAV */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;transition:padding .4s var(--ease),background .4s var(--ease);will-change:padding,background}
+        nav.scrolled{background:rgba(6,6,6,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.85rem 0;border-bottom:1px solid var(--border)}
+        .nav-inner{max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem);display:flex;justify-content:space-between;align-items:center}
+        .nav-brand{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;-webkit-tap-highlight-color:transparent}
+        .nav-links{display:flex;gap:2.5rem;list-style:none}
+        .nav-links a{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .3s;position:relative;-webkit-tap-highlight-color:transparent}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease)}
+        .nav-links a:hover{color:var(--white)}.nav-links a:hover::after{width:100%}
+        .nav-toggle{display:none;background:none;border:none;color:var(--white);cursor:pointer;width:44px;height:44px;position:relative;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+        .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--white);position:absolute;left:11px;transition:all .3s}
+        .nav-toggle span:nth-child(1){top:14px}.nav-toggle span:nth-child(2){top:21px}.nav-toggle span:nth-child(3){top:28px}
+        .nav-toggle.active span:nth-child(1){top:21px;transform:rotate(45deg)}.nav-toggle.active span:nth-child(2){opacity:0}.nav-toggle.active span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+        /* HERO */
+        .hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden;contain:layout style}
+        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(200,164,78,.06) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 20% 80%,rgba(200,164,78,.03) 0%,transparent 60%)}
+        .hero-line{position:absolute;left:clamp(1.25rem,4vw,4rem);top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold) 20%,var(--gold) 80%,transparent);opacity:.15}
+        .hero-inner{max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem);width:100%;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,8rem);align-items:center;position:relative;z-index:1}
+        .hero-content{padding:clamp(2rem,4vw,6rem) 0}
+        .hero-eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0;transform:translate3d(0,20px,0);animation:fadeUp 1.6s .5s var(--ease) forwards}
+        .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+        .hero-title{font-family:var(--serif);font-size:clamp(3rem,7.5vw,7.5rem);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:1.5rem;opacity:0;transform:translate3d(0,40px,0);animation:fadeUp 2s 1s var(--ease) forwards}
+        .hero-title em{font-style:italic;color:var(--gold)}
+        .hero-subtitle{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:400;color:var(--dim);line-height:1.8;max-width:480px;margin-bottom:2.5rem;opacity:0;transform:translate3d(0,30px,0);animation:fadeUp 1.8s 1.8s var(--ease) forwards}
+        .hero-stats{display:flex;gap:clamp(1.5rem,3vw,3rem);opacity:0;transform:translate3d(0,20px,0);animation:fadeUp 1.6s 2.4s var(--ease) forwards}
+        .stat{display:flex;flex-direction:column}
+        .stat-number{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--gold);line-height:1}
+        .stat-label{font-size:.7rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+        .hero-portrait{position:relative;display:flex;justify-content:center;align-items:center;opacity:0;transform:translate3d(0,40px,0) scale(.95);animation:fadeUp 2.2s .8s var(--ease) forwards}
+        .portrait-frame{position:relative;width:clamp(240px,26vw,420px);aspect-ratio:3/4;overflow:hidden}
+        .portrait-frame::before{content:'';position:absolute;inset:-1px;border:1px solid var(--gold);opacity:.25;z-index:2}
+        .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+        .portrait-accent{position:absolute;top:-20px;right:-20px;width:80px;height:80px;border:1px solid var(--gold);opacity:.2}
+        .portrait-tag{position:absolute;bottom:-10px;left:-10px;background:var(--gold);color:var(--bg);font-family:var(--mono);font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1rem}
+        @keyframes fadeUp{to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+
+        /* SCROLL REVEAL */
+        [data-sr] .sr{opacity:0;transform:translate3d(0,40px,0);transition:opacity 3s var(--ease),transform 3s var(--ease);will-change:opacity,transform}
+        [data-sr] .sr.shown{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+        [data-sr] .sr-d1{transition-delay:.4s}[data-sr] .sr-d2{transition-delay:.8s}[data-sr] .sr-d3{transition-delay:1.2s}[data-sr] .sr-d4{transition-delay:1.6s}
+
+        .era-dot,.era-year,.era-title,.era-text,.era-tags{transition:opacity 2.8s var(--ease),transform 2.8s var(--ease)}
+        .era-text{transition-delay:.5s}.era-tags{transition-delay:1s}
+        [data-sr] .era .era-dot{opacity:0;transform:scale(0)}
+        [data-sr] .era .era-year{opacity:0}
+        [data-sr] .era .era-title{opacity:0;transform:translate3d(0,25px,0)}
+        [data-sr] .era .era-text{opacity:0;transform:translate3d(0,30px,0)}
+        [data-sr] .era .era-tags{opacity:0;transform:translate3d(0,20px,0)}
+        [data-sr] .era.shown .era-dot{opacity:1;transform:scale(1)}
+        [data-sr] .era.shown .era-year{opacity:1}
+        [data-sr] .era.shown .era-title{opacity:1;transform:translate3d(0,0,0)}
+        [data-sr] .era.shown .era-text{opacity:1;transform:translate3d(0,0,0)}
+        [data-sr] .era.shown .era-tags{opacity:1;transform:translate3d(0,0,0)}
+
+        /* REDUCED MOTION */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+            .hero-eyebrow,.hero-title,.hero-subtitle,.hero-stats,.hero-portrait{opacity:1;transform:none;animation:none}
+        }
+
+        /* SECTIONS */
+        .section{padding:clamp(4rem,8vw,10rem) 0;position:relative;contain:layout style}
+        .section-inner{max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem)}
+        .section-header{margin-bottom:clamp(2.5rem,5vw,5rem)}
+        .section-eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem}
+        .section-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
+        .section-heading{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4.5rem);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+        .section-heading em{font-style:italic;color:var(--gold)}
+        .section-desc{font-size:1rem;font-weight:400;color:var(--dim);line-height:1.8;max-width:600px;margin-top:1.25rem}
+
+        /* JOURNEY */
+        .journey-section{background:var(--bg)}
+        .timeline-track{position:relative;display:flex;flex-direction:column}
+        .timeline-track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(200,164,78,.3) 10%,rgba(200,164,78,.3) 90%,transparent)}
+        .era{display:grid;grid-template-columns:auto 1fr;gap:0 clamp(1.5rem,3vw,4rem);padding:clamp(2rem,3.5vw,4rem) 0;border-bottom:1px solid var(--border);position:relative}
+        .era:last-child{border-bottom:none}
+        .era-marker{position:relative;display:flex;flex-direction:column;align-items:center;width:80px}
+        .era-body{max-width:700px}
+        .era-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);position:relative;left:-40px;margin-left:.5px;flex-shrink:0;margin-top:.6rem;box-shadow:0 0 15px var(--gold-glow)}
+        .era-year{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.15em;color:var(--gold);white-space:nowrap;margin-top:1rem;position:relative;left:-10px}
+        .era-title{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2.4rem);font-weight:600;line-height:1.2;margin-bottom:.75rem}
+        .era-text{font-weight:400;color:var(--dim);line-height:1.8;font-size:clamp(.88rem,1vw,.95rem)}
+        .era-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem}
+        .era-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .75rem;border:1px solid rgba(255,255,255,.12);color:var(--dim);background:rgba(255,255,255,.04)}
+
+        /* PHILOSOPHY */
+        .philosophy-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,8rem);align-items:start}
+        .philosophy-quote{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,2rem);font-weight:400;font-style:italic;line-height:1.7;color:var(--white);padding-left:1.5rem;border-left:2px solid var(--gold)}
+        .principles{display:flex;flex-direction:column;gap:2rem}
+        .principle{padding-bottom:2rem;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:none;padding-bottom:0}
+        .principle-num{font-family:var(--mono);font-size:.65rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem}
+        .principle-title{font-family:var(--serif);font-size:clamp(1.2rem,1.5vw,1.5rem);font-weight:600;margin-bottom:.6rem}
+        .principle-text{font-weight:400;color:var(--dim);line-height:1.7;font-size:clamp(.88rem,1vw,.95rem)}
+
+        /* EXPERTISE */
+        .expertise-section{background:var(--bg)}
+        .expertise-intro{font-size:clamp(.95rem,1.1vw,1.1rem);font-weight:400;color:var(--dim);line-height:1.9;max-width:700px;margin-bottom:clamp(2.5rem,4vw,5rem)}
+        .expertise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+        .expertise-card{background:var(--bg);padding:clamp(1.25rem,2.5vw,2.5rem);position:relative}
+        .expertise-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--gold);transition:width .5s var(--ease)}
+        @media(hover:hover){.expertise-card:hover{background:var(--bg2)}.expertise-card:hover::before{width:100%}}
+        .expertise-card h4{font-family:var(--serif);font-size:clamp(1.1rem,1.3vw,1.25rem);font-weight:600;margin-bottom:.6rem}
+        .expertise-card p{font-weight:400;color:var(--dim);font-size:clamp(.85rem,.95vw,.92rem);line-height:1.7}
+
+        /* PROJECTS */
+        .projects-section{background:var(--bg2);border-top:1px solid var(--border)}
+        .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,2.5vw,2.5rem)}
+        .project-card{background:var(--bg);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+        @media(hover:hover){.project-card:hover{border-color:var(--border-h);box-shadow:0 20px 60px rgba(0,0,0,.4)}.project-card:hover .project-thumb img{transform:scale(1.05)}}
+        .project-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--surface)}
+        .project-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+        .project-body{padding:clamp(1.25rem,2vw,2rem);flex:1;display:flex;flex-direction:column}
+        .project-label{font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+        .project-name{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.6rem);font-weight:600;margin-bottom:.6rem;line-height:1.2}
+        .project-desc{font-weight:400;color:var(--dim);font-size:clamp(.85rem,.95vw,.92rem);line-height:1.7;flex:1}
+
+        /* CONTACT */
+        .contact-section{background:var(--bg);border-top:1px solid var(--border)}
+        .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,8rem);align-items:start}
+        .contact-cta{font-family:var(--serif);font-size:clamp(1.8rem,4vw,4rem);font-weight:600;line-height:1.15;margin-bottom:1.25rem}
+        .contact-cta em{font-style:italic;color:var(--gold)}
+        .contact-text{font-weight:400;color:var(--dim);line-height:1.8;font-size:clamp(.9rem,1vw,1rem);margin-bottom:2rem}
+        .btn-gold{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;background:var(--gold);color:var(--bg);font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+        @media(hover:hover){.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--gold-glow)}}
+        .btn-gold:active{transform:scale(.97)}
+        .btn-gold svg{width:14px;height:14px}
+        .contact-form{display:flex;flex-direction:column;gap:1.25rem}
+        .form-field{display:flex;flex-direction:column;gap:.4rem}
+        .form-field label{font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+        .form-field input,.form-field textarea{background:var(--bg2);border:1px solid var(--border);padding:.9rem 1.1rem;color:var(--white);font-family:var(--sans);font-size:16px;font-weight:400;transition:border-color .3s;outline:none;border-radius:0;-webkit-appearance:none}
+        .form-field input:focus,.form-field textarea:focus{border-color:var(--gold)}
+        .form-field textarea{resize:vertical;min-height:110px}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+        .form-status{padding:.85rem;text-align:center;font-weight:500;font-size:.85rem;display:none}
+        .form-status.success{display:block;background:rgba(200,164,78,.1);border:1px solid var(--gold);color:var(--gold)}
+        .form-status.error{display:block;background:rgba(255,80,80,.1);border:1px solid #ff5050;color:#ff8080}
+
+        /* SOCIAL ICONS */
+        .social-icons{display:flex;gap:1.25rem;margin-top:2rem}
+        .social-icons a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border);color:var(--dim);transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+        .social-icons a svg{width:20px;height:20px}
+        @media(hover:hover){.social-icons a:hover{color:var(--gold);border-color:var(--gold);background:var(--gold-dim)}}
+        .social-icons a:active{transform:scale(.95)}
+
+        /* FOOTER */
+        footer{padding:2.5rem 0;border-top:1px solid var(--border)}
+        .footer-inner{max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,4rem);display:flex;justify-content:space-between;align-items:center}
+        .footer-copy{font-size:.78rem;color:var(--muted);font-weight:400}
+        .footer-socials{display:flex;gap:1.5rem}
+        .footer-socials a{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .3s;-webkit-tap-highlight-color:transparent}
+        .footer-socials a:hover{color:var(--gold)}
+
+        /* RESPONSIVE */
+        @media(max-width:1024px){
+            .hero-inner{grid-template-columns:1fr;text-align:center}
+            .hero-subtitle{margin-left:auto;margin-right:auto}
+            .hero-stats{justify-content:center}
+            .hero-eyebrow{justify-content:center}
+            .hero-portrait{order:-1;margin-bottom:1.5rem}
+            .portrait-frame{width:clamp(180px,40vw,280px)}
+            .portrait-accent{display:none}
+            .portrait-tag{left:50%;transform:translateX(-50%);bottom:-10px}
+            .philosophy-grid{grid-template-columns:1fr}
+            .contact-layout{grid-template-columns:1fr}
+            .projects-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;justify-content:center;align-items:center;gap:1.75rem;z-index:99}
+            .nav-links.active{display:flex}
+            .nav-links a{font-size:1.1rem;letter-spacing:.15em;padding:.5rem 1rem}
+            .nav-links a::after{display:none}
+            .nav-toggle{display:flex;align-items:center;justify-content:center;z-index:101}
+            .hero{min-height:auto;min-height:auto;padding:7rem 0 3.5rem}
+            .hero-line{display:none}
+            .hero-stats{flex-wrap:wrap;gap:1.5rem}
+            .era{grid-template-columns:1fr;gap:0;padding-left:1.75rem}
+            .era-marker{width:auto;flex-direction:row;align-items:center;gap:.75rem;margin-bottom:.75rem}
+            .era-dot{left:-1.75rem;margin-top:0;position:absolute}
+            .era-year{left:0;margin-top:0}
+            .timeline-track::before{left:0}
+            .expertise-grid{grid-template-columns:1fr}
+            .form-row{grid-template-columns:1fr}
+            .footer-inner{flex-direction:column;gap:1.25rem;text-align:center}
+            .section{padding:clamp(3rem,7vw,6rem) 0}
+        }
+        @media(max-width:480px){
+            .portrait-frame{width:200px}
+            .stat-number{font-size:1.8rem}
+            .era-marker{width:auto}
+            .era-tag{font-size:.6rem;padding:.35rem .6rem}
+            .section-heading{font-size:clamp(1.8rem,6vw,2.5rem)}
+            .hero-title{font-size:clamp(2.5rem,10vw,3.5rem)}
+            .contact-cta{font-size:clamp(1.6rem,5vw,2.2rem)}
+        }
+        @media(hover:none)and (pointer:coarse){
+            .nav-links a,.btn-gold,button,a{min-height:44px;min-width:44px}
+            .nav-links a{display:flex;align-items:center;justify-content:center}
+        }
+    </style>
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <nav id="navbar"><div class="nav-inner"><a href="#" class="nav-brand">DXF</a><ul class="nav-links" id="navLinks"><li><a href="#home">Home</a></li><li><a href="#journey">Journey</a></li><li><a href="#philosophy">Philosophy</a></li><li><a href="#expertise">Expertise</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul><button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div><div class="hero-line" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Washington, DC</div>
+                <h1 class="hero-title">Darrin<br><em>"X"</em><br>Frazier</h1>
+                <p class="hero-subtitle">Cultural architect, musician, producer, and digital innovator with 40+ years shaping Go-Go music from the stage to the screen.</p>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">40+</span><span class="stat-label">Years in Go-Go</span></div>
+                    <div class="stat"><span class="stat-number">10+</span><span class="stat-label">Years w/ Rare Essence</span></div>
+                    <div class="stat"><span class="stat-number">5</span><span class="stat-label">Active Platforms</span></div>
+                </div>
+            </div>
+            <div class="hero-portrait"><div class="portrait-frame"><img src="DX_HS_pic.png" alt="Darrin 'X' Frazier" loading="eager" fetchpriority="high" width="840" height="1120"></div><div class="portrait-accent" aria-hidden="true"></div><div class="portrait-tag">Cultural Architect</div></div>
+        </div>
+    </section>
+
+    <section class="section journey-section" id="journey">
+        <div class="section-inner">
+            <div class="section-header sr"><div class="section-eyebrow">The Journey</div><h2 class="section-heading">Four Decades of<br><em>Shaping the Sound</em></h2><p class="section-desc">Every role taught me something essential. Every setback revealed a truth. Here's how it all unfolded.</p></div>
+            <div class="timeline-track">
+                <div class="era"><div class="era-marker"><div class="era-dot"></div><span class="era-year">1980s — 1991</span></div><div class="era-body"><h3 class="era-title">Stage Crew to Technician</h3><p class="era-text">It started with Experience Unlimited (EU) in the early '80s—stage crew work that offered a ground-level view of Go-Go at its absolute peak. By 1985, I was working as a stage technician for Rare Essence, learning the mechanics behind the magic, the technical foundations that made the music hit different.</p><div class="era-tags"><span class="era-tag">Experience Unlimited</span><span class="era-tag">Rare Essence</span><span class="era-tag">Stage Tech</span><span class="era-tag">Live Production</span></div></div></div>
+                <div class="era"><div class="era-marker"><div class="era-dot"></div><span class="era-year">1991 — 2000s</span></div><div class="era-body"><h3 class="era-title">Rare Essence Keyboardist</h3><p class="era-text">In 1991, I officially joined Rare Essence as a keyboardist—a role I held for over a decade. This wasn't just performing; it was creating. I earned production credits on some of the band's most influential 1990s records, helping shape the sound that defined an era.</p><div class="era-tags"><span class="era-tag">Work the Walls</span><span class="era-tag">Must Be Like That</span><span class="era-tag">Ah-Oh</span><span class="era-tag">Body Snatchers</span><span class="era-tag">Overnight Scenario</span></div></div></div>
+                <div class="era"><div class="era-marker"><div class="era-dot"></div><span class="era-year">2001</span></div><div class="era-body"><h3 class="era-title">The 911 Era</h3><p class="era-text">Continued the musical journey with the band 911, performing alongside Donnell Floyd at the legendary Chuck Brown Birthday Celebration Live at the 9:30 Club. This was about honoring the roots while pushing the culture forward.</p><div class="era-tags"><span class="era-tag">911</span><span class="era-tag">Donnell Floyd</span><span class="era-tag">9:30 Club</span><span class="era-tag">Chuck Brown Tribute</span></div></div></div>
+                <div class="era"><div class="era-marker"><div class="era-dot"></div><span class="era-year">2003 — 2011</span></div><div class="era-body"><h3 class="era-title">Curating the Bounce Beat</h3><p class="era-text">Partnered with Reginald "Polo" Burrell of TCB and entrepreneur Ben Abba to create and market the Bounce Beat sound—a Go-Go subgenre that sparked the "Beat Your Feet" dance movement. When Wale licensed TCB's "Bait" for his Ambition album through Warner Music Group in 2011, Go-Go reached new heights. I helped make that deal happen.</p><div class="era-tags"><span class="era-tag">Bounce Beat</span><span class="era-tag">Beat Your Feet</span><span class="era-tag">TCB</span><span class="era-tag">Wale × Warner</span></div></div></div>
+                <div class="era"><div class="era-marker"><div class="era-dot"></div><span class="era-year">2015 — Present</span></div><div class="era-body"><h3 class="era-title">Cultural Architect &amp; Digital Innovator</h3><p class="era-text">Go-Go became more than music—it became a tool for connection and advocacy. Co-owner of Go-GoRoyalty.com, I've expanded the culture's reach globally. Through collaborations with Moechella founder Yaddiya and the "Don't Mute DC" movement, I helped position Go-Go as a unifying force. Instrumental in opening the Go-Go Museum and Cafe, I worked with Monumental Sports on the Capital City Go-Go naming, secured COVID-19 relief for Go-Go bands, and now pioneer 360° virtual experiences, digital archiving, and AI for Go-Go culture.</p><div class="era-tags"><span class="era-tag">Don't Mute DC</span><span class="era-tag">Moechella</span><span class="era-tag">Go-Go Museum</span><span class="era-tag">360° VR</span><span class="era-tag">AI Innovation</span><span class="era-tag">COVID Relief</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section philosophy-section" id="philosophy">
+        <div class="section-inner">
+            <div class="section-header sr"><div class="section-eyebrow">Philosophy</div><h2 class="section-heading">What I've <em>Learned</em></h2></div>
+            <div class="philosophy-grid">
+                <blockquote class="philosophy-quote sr">Forty years in Go-Go taught me this: you can't preserve culture from the outside looking in. You preserve it by living it, by showing up for the community when it matters, by using every connection you've built to open doors for the next generation.</blockquote>
+                <div class="principles">
+                    <div class="principle sr sr-d1"><div class="principle-num">01 — Principle</div><h4 class="principle-title">Culture is Living</h4><p class="principle-text">Go-Go survives because it adapts. From Bounce Beat to streaming platforms to digital marketing and AI—innovation doesn't dilute tradition, it extends it.</p></div>
+                    <div class="principle sr sr-d2"><div class="principle-num">02 — Principle</div><h4 class="principle-title">Community First</h4><p class="principle-text">Every move I've made—from "Don't Mute DC" to COVID relief—starts with the people. The bands, the fans, the city. They're the heartbeat.</p></div>
+                    <div class="principle sr sr-d3"><div class="principle-num">03 — Principle</div><h4 class="principle-title">Legacy Through Action</h4><p class="principle-text">40+ years in, I'm still building. Still connecting. Still making sure Go-Go's voice gets louder, not quieter. That's how you honor what came before.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section expertise-section" id="expertise">
+        <div class="section-inner">
+            <div class="section-header sr"><div class="section-eyebrow">Expertise</div><h2 class="section-heading">What I <em>Do Now</em></h2></div>
+            <p class="expertise-intro sr">Today, I work with artists, cultural organizations, and innovators who understand that Go-Go is more than a genre—it's a movement. My work spans music production, cultural advocacy, platform development, and strategic partnerships.</p>
+            <div class="expertise-grid">
+                <div class="expertise-card sr"><h4>Cultural Strategy</h4><p>Positioning Go-Go in new markets and platforms while protecting its authenticity and community roots.</p></div>
+                <div class="expertise-card sr sr-d1"><h4>Platform Development</h4><p>Building digital infrastructure like Go-GoRoyalty.com using web design and IT networking expertise.</p></div>
+                <div class="expertise-card sr sr-d2"><h4>Music Production</h4><p>Decades of production experience creating and shaping Go-Go's signature sound across eras.</p></div>
+                <div class="expertise-card sr sr-d3"><h4>Business Administration</h4><p>Music business expertise for contracts, rights management, licensing, and revenue optimization.</p></div>
+                <div class="expertise-card sr"><h4>Community Advocacy</h4><p>From "Don't Mute DC" to the Go-Go Museum—securing resources and representation for the culture.</p></div>
+                <div class="expertise-card sr sr-d1"><h4>Partnership Facilitation</h4><p>Connecting Go-Go with brands, sports teams, and institutions for meaningful collaborations.</p></div>
+                <div class="expertise-card sr sr-d2"><h4>Technical Infrastructure</h4><p>IT networking and broadcast engineering for streaming platforms, digital archives, and virtual experiences.</p></div>
+                <div class="expertise-card sr sr-d3"><h4>Digital Innovation</h4><p>Pioneering Go-Go in 360° experiences, digital marketing, AI, and emerging technologies.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+        <div class="section-inner">
+            <div class="section-header sr"><div class="section-eyebrow">Portfolio</div><h2 class="section-heading">What I Create<br>&amp; <em>Manage</em></h2><p class="section-desc">Platforms, initiatives, and projects that give Go-Go culture a voice, a home, and a future.</p></div>
+            <div class="projects-grid">
+                <div class="project-card sr sr-d1"><div class="project-thumb"><img src="Royalty.png" alt="Go-Go Royalty" loading="lazy" width="800" height="450"></div><div class="project-body"><div class="project-label">Streaming Platform</div><h3 class="project-name">Go-Go Royalty</h3><p class="project-desc">24/7 streaming platform dedicated to Go-Go music. Co-owner and operator, providing global access to DC's homegrown sound with live streams, archived performances, and cultural programming.</p></div></div>
+                <div class="project-card sr sr-d2"><div class="project-thumb"><img src="brmg.png" alt="Beat Republic Media Group" loading="lazy" width="800" height="450"></div><div class="project-body"><div class="project-label">Agency</div><h3 class="project-name">Beat Republic Media Group</h3><p class="project-desc">Culture-driven brand and business strategy agency. Helping artists and cultural brands execute their vision through strategic planning, platform development, and authentic storytelling.</p></div></div>
+                <div class="project-card sr sr-d3"><div class="project-thumb"><img src="GoGo Museum (2).png" alt="Go-Go Museum and Cafe" loading="lazy" width="800" height="450"></div><div class="project-body"><div class="project-label">Cultural Landmark</div><h3 class="project-name">Go-Go Museum &amp; Cafe</h3><p class="project-desc">Instrumental in opening DC's first dedicated Go-Go museum. Leveraged community relationships to secure artist representation and participation, preserving the culture's history and legacy.</p></div></div>
+                <div class="project-card sr sr-d4"><div class="project-thumb"><img src="the bunch.png" alt="Digital Initiatives" loading="lazy" width="800" height="450"></div><div class="project-body"><div class="project-label">Digital Suite</div><h3 class="project-name">Digital Initiatives &amp; Archiving</h3><p class="project-desc">A suite of platforms: Go-Go VR for immersive concerts, GoGo DB as the genre's AI historian, Go-Go Maps for navigating the scene, and Crankington DC for wearable culture.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+        <div class="section-inner"><div class="contact-layout">
+            <div class="sr"><div class="section-eyebrow">Get in Touch</div><h2 class="contact-cta">Let's Build<br>Something <em>Together</em></h2><p class="contact-text">With over 40 years inside Go-Go culture, I offer consulting, strategic advisory, and live history presentations on the genre, its pioneers, and its impact on Washington, DC. Whether you need a cultural consultant for media projects, a keynote speaker for events and panels, or expert guidance on music licensing, platform development, and community partnerships—I bring the depth, the connections, and the firsthand knowledge that only decades on the ground can provide.</p><div class="social-icons"><a href="https://www.instagram.com/mrx1time/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a href="https://x.com/X_Mr202" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></div></div>
+            <form class="contact-form sr sr-d2" id="contactForm" action="https://n8n.srv856673.hstgr.cloud/webhook/contact-form" method="POST">
+                <div class="form-row"><div class="form-field"><label for="name">Name</label><input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name"></div><div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" required placeholder="you@email.com" autocomplete="email"></div></div>
+                <div class="form-field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" required placeholder="What's this about?"></div>
+                <div class="form-field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or collaboration idea..."></textarea></div>
+                <button type="submit" class="btn-gold" style="align-self:flex-start">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div></div>
+    </section>
+
+    <footer><div class="footer-inner sr"><div class="footer-copy">&copy; 2025 Darrin "X" Frazier. All rights reserved.</div><div class="footer-socials"><a href="https://www.instagram.com/mrx1time/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://x.com/X_Mr202" target="_blank" rel="noopener noreferrer">X / Twitter</a></div></div></footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        document.body.setAttribute('data-sr','');
+        var items=document.querySelectorAll('.sr,.era'),arr=[],i;
+        for(i=0;i<items.length;i++)arr.push(items[i]);
+        var raf=false;
+        function check(){
+            var h=window.innerHeight;
+            for(i=arr.length-1;i>=0;i--){
+                if(arr[i].getBoundingClientRect().top<h-30){
+                    arr[i].classList.add('shown');
+                    arr.splice(i,1);
+                }
+            }
+            if(!arr.length){window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll)}
+            raf=false;
+        }
+        function onScroll(){if(!raf){raf=true;requestAnimationFrame(check)}}
+        check();setTimeout(check,200);setTimeout(check,600);
+        window.addEventListener('scroll',onScroll,{passive:true});
+        window.addEventListener('resize',onScroll,{passive:true});
+
+        var nav=document.getElementById('navbar'),navRaf=false;
+        window.addEventListener('scroll',function(){if(!navRaf){navRaf=true;requestAnimationFrame(function(){nav.classList.toggle('scrolled',window.scrollY>60);navRaf=false})}},{passive:true});
+
+        var tog=document.getElementById('navToggle'),lnk=document.getElementById('navLinks');
+        tog.addEventListener('click',function(){tog.classList.toggle('active');lnk.classList.toggle('active');document.body.style.overflow=lnk.classList.contains('active')?'hidden':''});
+        lnk.addEventListener('click',function(e){if(e.target.tagName==='A'){tog.classList.remove('active');lnk.classList.remove('active');document.body.style.overflow=''}});
+
+        var anchors=document.querySelectorAll('a[href^="#"]');
+        for(i=0;i<anchors.length;i++){anchors[i].addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;e.preventDefault();var t=document.querySelector(h);if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'})})}
+
+        var form=document.getElementById('contactForm'),st=document.getElementById('formStatus');
+        if(form)form.addEventListener('submit',function(e){
+            e.preventDefault();var btn=form.querySelector('button[type="submit"]');btn.textContent='Sending...';btn.disabled=true;st.className='form-status';st.style.display='none';
+            var data={name:form.name.value,email:form.email.value,subject:form.subject.value,message:form.message.value};
+            fetch(form.action,{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json','Authorization':'Bearer mysite-form-token-2026-xK9p'}}).then(function(r){
+                return r.json().then(function(j){
+                    if(r.ok&&j.success){st.textContent="Message sent — I'll be in touch soon.";st.classList.add('success');form.reset()}
+                    else{st.textContent=j.message||'Something went wrong.';st.classList.add('error')}
+                });
+            }).catch(function(err){console.error('Form:',err);st.textContent='Connection error. Please try again.';st.classList.add('error')}).finally(function(){
+                btn.innerHTML='Send Message <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';btn.disabled=false;st.style.display='block';
+            });
+        });
+    });
+    </script>
+</body>
+</html>
